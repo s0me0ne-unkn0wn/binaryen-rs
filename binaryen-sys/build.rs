@@ -135,6 +135,9 @@ fn main() {
         let _ = Command::new("git")
             .args(&["submodule", "update", "--init"])
             .status();
+        let _ = Command::new("git")
+            .args(&["-C", "binaryen", "apply", "../bigfuzz.patch"])
+            .status();
     }
 
     gen_passes();
